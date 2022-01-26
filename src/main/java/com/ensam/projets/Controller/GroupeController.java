@@ -1,4 +1,5 @@
 package com.ensam.projets.Controller;
+import com.ensam.projets.entity.Salarie;
 import org.springframework.web.bind.annotation.*;
 import com.ensam.projets.entity.Groupe;
 import com.ensam.projets.service.GroupeService;
@@ -18,6 +19,10 @@ public class GroupeController {
     @PostMapping(path = "/add")
     public Groupe addGroupe(@RequestBody Groupe groupe){
         return groupeService.addGroupe(groupe);
+    }
+    @PutMapping(path = "/addSalarieToGroupe")
+    public Groupe addSalarieToGroupe(@RequestParam(name="idGroupe")int idGroupe,@RequestParam (name="idSalarie") int idSalarie){
+        return groupeService.addSalarieToGroupe(idGroupe,idSalarie);
     }
     @PutMapping(path = "/update")
     public Groupe updateGroupe(@RequestBody Groupe groupe){

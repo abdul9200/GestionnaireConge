@@ -19,6 +19,10 @@ public class SalarieController {
     public Salarie addSalarie(@RequestBody Salarie salarie){
         return salarieService.addSalarie(salarie);
     }
+    @PutMapping(path = "/addDemandeCongeToSalarie")
+    public Salarie addDemandeCongeToSalarie(@RequestParam (name="idSalarie") int idSalarie,@RequestParam(name="idDemandeConge")int idDemandeConge){
+        return salarieService.addDemandeCongeToSalarie(idSalarie,idDemandeConge);
+    }
     @PutMapping(path = "/update")
     public Salarie updateSalarie(@RequestBody Salarie salarie){
         return salarieService.updateSalarie(salarie);

@@ -9,5 +9,7 @@ public interface SalarieService {
     void removeSalarie(Salarie salarie);
     Salarie updateSalarie(Salarie  salarie);
     Salarie getSalarieById(int id);
+    Salarie addDemandeCongeToSalarie(int idSalarie, int IdDemandeConge);
+
     List<Salarie> listSalarie();
 }

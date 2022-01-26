@@ -7,6 +7,7 @@ public interface GroupeService {
     void removeGroupe(Groupe groupe);
     Groupe updateGroupe(Groupe  groupe);
     Groupe getGroupeById(int id);
+    Groupe addSalarieToGroupe(int idGroupe,int idSalarie);
     List<Groupe> listGroupe();
 
 }

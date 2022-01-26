@@ -8,5 +8,6 @@ public interface DemandeCongeService {
     void removeDemandeConge(DemandeConge demandeConge);
     DemandeConge updateDemandeConge(DemandeConge  demandeConge);
     DemandeConge getDemandeCongeById(int id);
+    DemandeConge addCongetoDemandeConge(int idConge,int idDemandeConge);
     List<DemandeConge> listDemandeConge();
 }

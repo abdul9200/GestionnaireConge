@@ -1,4 +1,6 @@
 package com.ensam.projets.Controller;
+import com.ensam.projets.entity.Groupe;
+import jdk.internal.net.http.common.Demand;
 import org.springframework.web.bind.annotation.*;
 import com.ensam.projets.entity.DemandeConge;
 import com.ensam.projets.service.DemandeCongeService;
@@ -18,6 +20,10 @@ public class DemandeCongeController {
     @PostMapping(path = "/add")
     public DemandeConge addDemandeConge(@RequestBody DemandeConge demandeConge){
         return demandeCongeService.addDemandeConge(demandeConge);
+    }
+    @PutMapping(path = "/addCongeToDemandeConge")
+    public DemandeConge addCongeToDemandeConge(@RequestParam(name="idDemandeConge")int idDemandeConge, @RequestParam (name="idConge") int idConge){
+        return demandeCongeService.addCongetoDemandeConge(idDemandeConge,idConge);
     }
     @PutMapping(path = "/update")
     public DemandeConge updateDemandeConge(@RequestBody DemandeConge demandeConge){
